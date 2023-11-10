@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2023 OctaviOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -17,14 +17,11 @@ $(call inherit-product, device/redmi/begonia/device.mk)
 
 # Inherit some common OctaviOS Stuff
 $(call inherit-product, vendor/octavi/config/common_full_phone.mk)
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_DOESNT_LIKE_FLIPENDO := true
 TARGET_ENABLE_BLUR := true
 TARGET_USE_PIXEL_FINGERPRINT := true
-TARGET_SUPPORTS_CALL_RECORDING := true
 USE_PIXEL_CHARGER := true
 USE_LEGACY_BOOTANIMATION := true
-WITH_GAPPS := false
+WITH_GAPPS := true
 OCTAVI_MAINTAINER := NotShroudX97
 
 # Inherit some extras stuff
@@ -37,20 +34,16 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := begonia
 PRODUCT_NAME := octavi_begonia
-PRODUCT_BRAND := Redmi
+PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8 Pro
 PRODUCT_MANUFACTURER := Xiaomi
 
 BUILD_FINGERPRINT := "Redmi/begonia/begonia:11/RP1A.200720.011/V12.5.5.0.RGGMIXM:user/release-keys"
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="begonia-user 11 RP1A.200720.011 V12.5.5.0.RGGMIXM release-keys" \
-    PRODUCT_NAME="begonia" \
-    TARGET_DEVICE="begonia"
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
